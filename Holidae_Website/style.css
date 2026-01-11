@@ -1,0 +1,390 @@
+
+/* This removes default browser spacing so we start with a blank slate */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding doesn't make boxes wider than 100% */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Standard, easy-to-read font */
+    line-height: 1.6;
+    color: #333;
+}
+
+/* --- 2. HEADER & NAVIGATION --- */
+header {
+    background: #004d40; 
+    color: white;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/* --- 3. HERO SECTION (The Mobile First Hook) --- */
+.hero {
+    
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh; /* Takes up 60% of the screen height */
+    display: flex;
+    justify-content: center; /* Centers text horizontally */
+    align-items: center;     /* Centers text vertically */
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #ff9800; 
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* --- 4. RESPONSIVE GRID  --- */
+.package-container {
+    display: grid;
+    gap: 20px;
+    padding: 40px;
+    /* MOBILE DEFAULT: 1 Column */
+    grid-template-columns: 1fr;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Important: stops images stretching */
+}
+
+.card-details {
+    padding: 15px;
+    text-align: center;
+}
+
+/* --- 5. MEDIA QUERIES (The "Responsive" Magic) --- */
+
+/* For Tablets (Screens wider than 768px) */
+@media (min-width: 768px) {
+    .package-container {
+        grid-template-columns: 1fr 1fr; /* 2 Columns */
+    }
+}
+
+/* For Desktops (Screens wider than 1024px) */
+@media (min-width: 1024px) {
+    .package-container {
+        grid-template-columns: 1fr 1fr 1fr; 
+    }
+    
+    .hero {
+        height: 80vh; /* Make hero image bigger on desktop */
+    }
+}
+
+/* --- PAGE 2: PACKAGE DETAILS STYLES --- */
+
+.details-container {
+    max-width: 1100px; /* Keeps content from getting too wide on huge screens */
+    margin: 0 auto;    /* Centers the container */
+    padding: 20px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #004d40;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.location {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.main-detail-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    margin-top: 10px;
+    margin-left: 20px;
+    line-height: 2; /* Adds space between list items */
+}
+
+/* --- THE BOOKING BOX  --- */
+.booking-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.price {
+    font-size: 2rem;
+    color: #004d40;
+    font-weight: bold;
+}
+
+.per-person {
+    font-size: 1rem;
+    color: #666;
+    font-weight: normal;
+|}
+
+.btn-book-big {
+    background: #004d40;
+    color: white;
+    width: 100%;       /* Full width button */
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.safe-text {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* On Desktop, put Info on the left and Booking Box on the right */
+@media (min-width: 768px) {
+    .details-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr; 
+        gap: 40px;
+    }
+
+    .booking-box {
+        margin-top: 0; /* Remove top margin on desktop */
+        height: fit-content; /* Only take up as much height as needed */
+    }
+}
+
+/* --- HAMBURGER MENU STYLES --- */
+
+/* 1. Default: Hide the hamburger on Desktop */
+.hamburger {
+    display: none; 
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* 2. Mobile View: Show Hamburger, Hide Links */
+@media (max-width: 768px) {
+    
+    /* Show the icon */
+    .hamburger {
+        display: block; 
+    }
+
+    /* Hide the list of links by default */
+    .nav-links {
+        display: none; 
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 60px; /
+        left: 0;
+        background-color: #004d40; 
+        padding: 20px 0;
+        flex-direction: column; 
+    }
+
+    /* Styles for when the menu is stacked */
+    .nav-links li {
+        display: block;
+        margin: 15px 0;
+    }
+
+  
+    /* This makes the menu appear when we click */
+    .nav-links.active {
+        display: flex; 
+    }
+}
+
+/* --- ACCESSIBILITY UTILITIES --- */
+
+/* 1. Skip Link: Hidden until focused */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0; /* Slides down when tabbed to */
+}
+
+/* 2. Focus Visible: Clear outline for keyboard users */
+:focus-visible {
+    outline: 3px solid #ff9800;
+    outline-offset: 2px;
+}
+
+/* 3. Reduced Motion: Respects user OS settings */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .parallax {
+        background-attachment: scroll !important; /* Disable parallax */
+    }
+}
+
+/* --- INTERACTIVITY STYLES --- */
+
+/* 1. Parallax Effect */
+.parallax {
+    /* Holds the background image in place while content scrolls */
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* 2. Scroll Reveal Animation (Hidden state) */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px); 
+    transition: all 0.8s ease-out;
+}
+
+/* The class JS will add to make it appear */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Like/Share Buttons */
+.img-wrapper {
+    position: relative;
+}
+
+.card-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.icon-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+.icon-btn.liked {
+    background: #ffebee;
+    color: red; /* Visual feedback for state */
+}
+
+/* 4. Toast Notifications */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background: #333;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* 5. Pause Button */
+#anim-toggle {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}

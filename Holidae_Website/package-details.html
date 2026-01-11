@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tropical Paradise - Holidae</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Holidae</div>
+            
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#packages">Destinations</a></li>
+                <li><a href="#" class="btn-book">Book Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="details-container">
+        
+        <a href="index.html" class="back-link">&larr; Back to Deals</a>
+
+        <h1>Tropical Paradise Resort</h1>
+        <p class="location">📍 Maldives, Indian Ocean</p>
+
+        <div class="details-grid">
+            
+            <div class="details-info">
+                <img src="images/package1.jpg" alt="Tropical Beach View" class="main-detail-img">
+                
+                <h2>About this Holiday</h2>
+                <p>Experience the ultimate luxury in our over-water villas. Wake up to the sound of the ocean and enjoy 5-star dining right on the beach.</p>
+                
+                <h3>Package Includes:</h3>
+                <ul class="features-list">
+                    <li>✈️ Return Flights from London</li>
+                    <li>🏨 7 Nights in a Water Villa</li>
+                    <li>🍽️ All Inclusive Dining</li>
+                    <li>boat Speedboat Transfer</li>
+                </ul>
+            </div>
+
+            <aside class="booking-box">
+                <h3>Total Price</h3>
+                <p class="price">£499 <span class="per-person">per person</span></p>
+                
+                <hr>
+
+                <p><strong>Dates:</strong> 14th Aug - 21st Aug</p>
+                <p><strong>Guests:</strong> 2 Adults</p>
+
+                <button class="btn-book-big">Proceed to Checkout</button>
+                <p class="safe-text">🔒 Secure Payment</p>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Holidae Travel Ltd.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
+            
+            // This checks: Is the class "active" there? 
+            // If yes, remove it. If no, add it.
+            menu.classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

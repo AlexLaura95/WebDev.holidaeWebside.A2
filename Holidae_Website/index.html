@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holidae - Affordable Escapes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Holidae</div>
+            
+            <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" role="button" tabindex="0">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#main-content">Destinations</a></li>
+                <li><a href="#" class="btn-book">Book Now</a></li>
+                <li><button id="anim-toggle" onclick="toggleAnimations()" aria-pressed="false">⏸ Pause Motion</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero parallax">
+        <div class="hero-content reveal-on-scroll">
+            <h1>Find Your Paradise</h1>
+            <p>Luxury holidays at affordable prices.</p>
+            <a href="#main-content" class="cta-button">Browse Deals</a>
+        </div>
+    </section>
+
+    <main id="main-content">
+        <h2 class="section-title reveal-on-scroll">Trending Destinations</h2>
+        
+        <div class="package-container">
+
+            <article class="card reveal-on-scroll">
+                <div class="img-wrapper">
+                    <img src="images/package1.jpg" alt="Tropical Beach View">
+                    <div class="card-actions">
+                        <button class="icon-btn" onclick="handleLike(this)" aria-label="Like this package">❤️</button>
+                        <button class="icon-btn" onclick="handleShare('Tropical Paradise')" aria-label="Share this package">🔗</button>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Tropical Paradise</h3>
+                    <p>7 Nights from £499</p>
+                    <a href="package-details.html" class="btn-card">View Deal</a>
+                </div>
+            </article>
+
+            <article class="card reveal-on-scroll">
+                <div class="img-wrapper">
+                    <img src="images/package2.jpg" alt="City Street View">
+                    <div class="card-actions">
+                        <button class="icon-btn" onclick="handleLike(this)" aria-label="Like this package">❤️</button>
+                        <button class="icon-btn" onclick="handleShare('City Escape')" aria-label="Share this package">🔗</button>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>City Escape</h3>
+                    <p>3 Nights from £250</p>
+                    <a href="package-details.html" class="btn-card">View Deal</a>
+                </div>
+            </article>
+
+            <article class="card reveal-on-scroll">
+                <div class="img-wrapper">
+                    <img src="images/package3.jpg" alt="Skiing in the Alps">
+                    <div class="card-actions">
+                        <button class="icon-btn" onclick="handleLike(this)" aria-label="Like this package">❤️</button>
+                        <button class="icon-btn" onclick="handleShare('Alpine Skiing')" aria-label="Share this package">🔗</button>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Alpine Skiing</h3>
+                    <p>5 Nights from £650</p>
+                    <a href="#" class="btn-card">View Deal</a>
+                </div>
+            </article>
+
+            <article class="card reveal-on-scroll">
+                <div class="img-wrapper">
+                    <img src="images/package4.jpg" alt="Mountain Hiking">
+                    <div class="card-actions">
+                        <button class="icon-btn" onclick="handleLike(this)" aria-label="Like this package">❤️</button>
+                        <button class="icon-btn" onclick="handleShare('Mountain Adventure')" aria-label="Share this package">🔗</button>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Mountain Adventure</h3>
+                    <p>10 Nights from £899</p>
+                    <a href="#" class="btn-card">View Deal</a>
+                </div>
+            </article>
+
+            <article class="card reveal-on-scroll">
+                <div class="img-wrapper">
+                    <img src="images/package5.jpg" alt="Spa and Pool">
+                    <div class="card-actions">
+                        <button class="icon-btn" onclick="handleLike(this)" aria-label="Like this package">❤️</button>
+                        <button class="icon-btn" onclick="handleShare('Luxury Spa')" aria-label="Share this package">🔗</button>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Luxury Spa</h3>
+                    <p>2 Nights from £199</p>
+                    <a href="#" class="btn-card">View Deal</a>
+                </div>
+            </article>
+
+            <article class="card reveal-on-scroll">
+                <div class="img-wrapper">
+                    <img src="images/package6.jpg" alt="Ancient Ruins">
+                    <div class="card-actions">
+                        <button class="icon-btn" onclick="handleLike(this)" aria-label="Like this package">❤️</button>
+                        <button class="icon-btn" onclick="handleShare('Cultural Tour')" aria-label="Share this package">🔗</button>
+                    </div>
+                </div>
+                <div class="card-details">
+                    <h3>Cultural Tour</h3>
+                    <p>14 Nights from £1200</p>
+                    <a href="#" class="btn-card">View Deal</a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <div id="toast-container" aria-live="polite"></div>
+
+    <footer>
+        <p>&copy; 2024 Holidae Travel Ltd.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
